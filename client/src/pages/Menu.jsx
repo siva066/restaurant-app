@@ -27,7 +27,7 @@ const Menu = () => {
 
   const fetchMenuItems = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/menu');
+      const response = await axios.get('https://restaurant-n76v.onrender.com/api/menu');
       setMenuItems(response.data);
       setLoading(false);
     } catch (error) {
