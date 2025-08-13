@@ -45,8 +45,8 @@ const Admin = () => {
   const fetchData = async () => {
     try {
       const [reservationsRes, menuRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/reservations'),
-        axios.get('http://localhost:5000/api/menu')
+        axios.get('https://restaurant-n76v.onrender.com/api/reservations'),
+        axios.get('https://restaurant-n76v.onrender.com/api/menu')
       ]);
 
       setReservations(reservationsRes.data);
@@ -77,7 +77,7 @@ const Admin = () => {
   const updateReservationStatus = async (id, status) => {
     try {
       setUpdatingReservation(id);
-      await axios.patch(`http://localhost:5000/api/reservations/${id}`, { status });
+      await axios.patch(`https://restaurant-n76v.onrender.com/api/reservations/${id}`, { status });
       await fetchData(); // Refresh data
     } catch (error) {
       console.error('Error updating reservation:', error);
@@ -88,7 +88,7 @@ const Admin = () => {
 
   const toggleMenuItemAvailability = async (id, isAvailable) => {
     try {
-      await axios.patch(`http://localhost:5000/api/menu/${id}/toggle-availability`, { isAvailable });
+      await axios.patch(`https://restaurant-n76v.onrender.com/api/menu/${id}/toggle-availability`, { isAvailable });
       fetchData(); // Refresh data
     } catch (error) {
       console.error('Error updating menu item:', error);
