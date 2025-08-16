@@ -29,8 +29,8 @@ const AdminLogin = () => {
 
     // Simple admin authentication (in production, this should be server-side)
     const validCredentials = {
-      username: 'admin',
-      password: 'admin123'
+      username: 'Siva',
+      password: 'Siva123'
     };
 
     // Simulate API call delay
