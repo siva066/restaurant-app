@@ -95,7 +95,7 @@ const Reservations = () => {
     setErrors({});
 
     try {
-      const response = await axios.get("https://restaurant-app-q3iz.onrender.com/api/reservations")
+      const response = await axios.get("https://restaurant-app-q3iz.onrender.com")
 , {
         ...formData,
         status: 'pending'
